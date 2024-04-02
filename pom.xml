@@ -10,7 +10,7 @@
 
     <groupId>org.iq80.leveldb</groupId>
     <artifactId>leveldb-project</artifactId>
-    <version>0.12</version>
+    <version>0.13-wr.1</version>
     <packaging>pom</packaging>
 
     <description>Port of LevelDB to Java</description>
