@@ -22,6 +22,7 @@ import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import java.lang.ref.PhantomReference;
 import java.lang.ref.ReferenceQueue;
 import java.util.concurrent.Callable;
+import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -45,7 +46,7 @@ public class Finalizer<T>
     private final int threads;
     private final FinalizerMonitor monitor;
 
-    private final ConcurrentHashMap<FinalizerPhantomReference<T>, Object> references = new ConcurrentHashMap<>();
+    private final ConcurrentMap<FinalizerPhantomReference<T>, Object> references = new ConcurrentHashMap<>();
     private final ReferenceQueue<T> referenceQueue = new ReferenceQueue<>();
     private final AtomicBoolean destroyed = new AtomicBoolean();
     private ExecutorService executor;
